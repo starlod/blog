@@ -11,4 +11,8 @@ class PostsController extends Controller
         $posts = Post::latest()->get();
         return view('posts.index', ['posts' => $posts]);
     }
+
+    public function show(Post $post) {
+        return view('posts.show', ['post' => $post]);
+    }
 }

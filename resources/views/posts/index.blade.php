@@ -5,7 +5,7 @@
     <h1>Blog Posts</h1>
     <ul>
         @forelse ($posts as $post)
-            <li>{{ $post->title }}</li>
+            <li><a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a></li>
         @empty
             <li>No posts yet</li>
         @endforelse
