@@ -17,14 +17,6 @@ git config --global core.ignorecase false
 cp /vagrant/provision/dev/home/vagrant/.mylogin.cnf ~/.mylogin.cnf
 chmod 600 ~/.mylogin.cnf
 
-# データベース作成
-mysql -e "CREATE DATABASE blog;"
-mysql -e "CREATE DATABASE blog_test;"
-
-## プロジェクト設定
-
-# デフォルトユーザー(vagrant)で実行する
-
 # git の出力に色を付ける
 git config --global color.ui true
 # git パーミッションの変更を無視
@@ -38,6 +30,24 @@ composer config -g repos.packagist composer https://packagist.jp
 composer global require hirak/prestissimo
 # キャッシュクリア
 composer clear-cache
+
+## プロジェクト設定
+
+# データベース作成
+mysql -e "CREATE DATABASE blog;"
+mysql -e "CREATE DATABASE blog_test;"
+
+if [ ! -f ~/blog/.env ]; then
+    cp ~/blog/.env.example ~/blog/.env
+fi
+
+if [ -d ~/blog ]; then
+    composer install
+    cd ~/blog
+    php artisan migrate
+    php artisan db:seed
+    # yarn install
+fi
 
 # バージョン確認
 echo $ cat /etc/redhat-release; cat /etc/redhat-release
