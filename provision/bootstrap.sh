@@ -44,7 +44,7 @@ systemctl enable yum-cron
 
 # bash
 \cp -f /vagrant/provision/dev/root/.bashrc ~/.bashrc
-\cp -f /vagrant/provision/dev/root/.bash_alias ~/.bash_alias
+\cp -f /vagrant/provision/dev/root/.bash_aliases ~/.bash_aliases
 
 ## Git
 

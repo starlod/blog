@@ -4,7 +4,7 @@
 
 # bash
 cp /vagrant/provision/dev/home/vagrant/.bashrc ~/.bashrc
-cp /vagrant/provision/dev/home/vagrant/.bash_alias ~/.bash_alias
+cp /vagrant/provision/dev/home/vagrant/.bash_aliases ~/.bash_aliases
 
 # git の出力に色を付ける
 git config --global color.ui true
