@@ -8,7 +8,7 @@
         <a href="{{ route('index') }}" class="header-menu">Back</a>
         New Post
     </h1>
-    {{ dump($errors) }}
+
     <form method="post" action="{{ route('posts.store') }}">
         {{ csrf_field() }}
         <p>
