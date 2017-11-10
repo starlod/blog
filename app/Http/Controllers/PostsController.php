@@ -41,4 +41,11 @@ class PostsController extends Controller
 
         return redirect()->route('index');
     }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return redirect()->route('index');
+    }
 }
