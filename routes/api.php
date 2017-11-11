@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// 'prefix' => 'masters', 'namespace' => 'Masters', 
+Route::group(['as' => 'api.'], function() {
+    Route::resource('posts', 'Api\PostsController', ['expect' => ['create', 'edit']]);
+    Route::resource('posts/{post}/comments', 'Api\CommentsController', ['expect' => ['create', 'edit']]);
+});
