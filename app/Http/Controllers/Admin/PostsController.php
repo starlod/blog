@@ -1,26 +1,32 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PostRequest;
 use App\Post;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        // $this->middleware('gate');
+    }
+
     public function index()
     {
         $posts = Post::latest()->get();
-        return view('posts.index', ['posts' => $posts]);
+        return view('admin.posts.index', ['posts' => $posts]);
     }
 
     public function show(Post $post)
     {
-        return view('posts.show', ['post' => $post]);
+        return view('admin.posts.show', ['post' => $post]);
     }
 
     public function create()
     {
-        return view('posts.create');
+        return view('admin.posts.create');
     }
 
     public function store(PostRequest $request)
@@ -32,7 +38,7 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        return view('posts.edit', ['post' => $post]);
+        return view('admin.posts.edit', ['post' => $post]);
     }
 
     public function update(PostRequest $request, Post $post)
