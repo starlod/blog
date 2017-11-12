@@ -15,9 +15,9 @@
 </head>
 <body>
     <div id="app">
-        <navigation-bar></navigation-bar>
+        <navbar></navbar>
         <main class="main">
-            <example></example>
+            <router-view></router-view>
         </main>
         <sticky-footer></sticky-footer>
     </div>

@@ -15,12 +15,16 @@
 //     return view('welcome');
 // });
 
-Auth::routes();
+Route::get('/{any}', function () {
+    return view('welcome');
+})->where('any', '.*');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'WelcomeController@index')->name('welcome');
+// Auth::routes();
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function() {
-    Route::resource('posts', 'PostsController');
-    Route::resource('posts/{post}/comments', 'CommentsController', ['only' => ['store', 'delete']]);
-});
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/', 'WelcomeController@index')->name('welcome');
+
+// Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function() {
+//     Route::resource('posts', 'PostsController');
+//     Route::resource('posts/{post}/comments', 'CommentsController', ['only' => ['store', 'delete']]);
+// });

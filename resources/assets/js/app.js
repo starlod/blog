@@ -7,7 +7,10 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+Vue.prototype.$http = window.axios
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,9 +19,18 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
-Vue.component('navigation-bar', require('./components/NavigationBar.vue'));
+Vue.component('navbar', require('./components/NavBar.vue'));
 Vue.component('sticky-footer', require('./components/StickyFooter.vue'));
 
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        { path: '/', component: require('./pages/posts/Index.vue') },
+        { path: '/posts', component: require('./pages/posts/Index.vue') },
+    ]
+});
+
 const app = new Vue({
+    router,
     el: '#app'
 });
