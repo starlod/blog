@@ -18,7 +18,7 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'Admin\PostsController@index')->name('index');
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function() {
     Route::resource('posts', 'PostsController');

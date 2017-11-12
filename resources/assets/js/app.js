@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('navigation-bar', require('./components/NavigationBar.vue'));
+Vue.component('sticky-footer', require('./components/StickyFooter.vue'));
 
 const app = new Vue({
     el: '#app'
