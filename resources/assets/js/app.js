@@ -22,6 +22,7 @@ Vue.prototype.$http = window.axios
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('navbar', require('./components/NavBar.vue'));
 Vue.component('sticky-footer', require('./components/StickyFooter.vue'));
+Vue.component('pagination', require('./components/Pagination.vue'));
 
 const router = new VueRouter({
     mode: 'history',
