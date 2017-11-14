@@ -9,8 +9,8 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::latest()->get();
-        return response()->json(['posts' => $posts]);
+        $posts = Post::latest()->paginate(20);
+        return response()->json($posts);
     }
 
     public function show(Post $post)

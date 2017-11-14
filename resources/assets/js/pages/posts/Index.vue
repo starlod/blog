@@ -1,6 +1,6 @@
 <template>
     <div class="container posts">
-        <div v-for="(item, index) in items" class="panel panel-info">
+        <div v-for="(item, index) in data" :key="item.id" class="panel panel-info">
             <div class="panel-heading">
                 No.{{ index+1 }} {{ item.title }}
             </div>
@@ -18,7 +18,9 @@
         data() {
             return {
                 url: '/api/posts',
-                items: []
+                json: '',
+                pagination: {},
+                data: []
             }
         },
         mounted() {
@@ -26,10 +28,10 @@
             var self = this;
 
             axios.get(this.url).then(function (response) {
-                let json = response.request.responseText;
-                let data = JSON.parse(json);
-                self.items = data['posts'];
-                console.log(data['posts']);
+                self.json = response.request.responseText;
+                self.paginate = JSON.parse(self.json);
+                log(self.paginate);
+                self.data = self.paginate['data'];
             }).catch(function (error) {
                 console.error(error);
             });
