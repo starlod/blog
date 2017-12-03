@@ -1,11 +1,15 @@
 <template>
     <div class="container posts">
-        <div v-for="(item, index) in data" :key="item.id" class="panel panel-info">
-            <div class="panel-heading">
-                No.{{ index+1 }} {{ item.title }}
-            </div>
-            <div class="panel-body">
-                {{ item.body }}
+        <div class="row">
+            <div class="col-sm-4" v-for="(item, index) in data" :key="item.id">
+                <div class="panel panel-info" style="height: 200px;">
+                    <div class="panel-heading">
+                        <router-link :to="{ name: 'posts.show', params: { id: item.id }}">No.{{ item.id }} {{ item.title }}</router-link>
+                    </div>
+                    <div class="panel-body">
+                        {{ item.body }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

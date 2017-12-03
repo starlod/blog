@@ -23,12 +23,14 @@ Vue.component('example', require('./components/Example.vue'));
 Vue.component('navbar', require('./components/NavBar.vue'));
 Vue.component('sticky-footer', require('./components/StickyFooter.vue'));
 Vue.component('pagination', require('./components/Pagination.vue'));
+Vue.component('comments', require('./components/Comments.vue'));
 
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/', component: require('./pages/posts/Index.vue') },
-        { path: '/posts', component: require('./pages/posts/Index.vue') },
+        { name: 'home',        path: '/', component: require('./pages/posts/Index.vue') },
+        { name: 'posts.index', path: '/posts', component: require('./pages/posts/Index.vue') },
+        { name: 'posts.show',  path: '/posts/:id', component: require('./pages/posts/Show.vue') },
     ]
 });
 
