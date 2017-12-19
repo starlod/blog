@@ -48,22 +48,9 @@ systemctl enable yum-cron
 
 ## Git
 
-# 古いgitを削除
 yum -y remove git
-
-# 必要なパッケージのインストール
-yum -y install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-ExtUtils-MakeMaker
-
-# 最新のgitをインストール
-GITVERSION="2.15.0" &&
-wget https://www.kernel.org/pub/software/scm/git/git-$GITVERSION.tar.gz &&
-tar -zxf git-$GITVERSION.tar.gz &&
-cd git-$GITVERSION &&
-make prefix=/usr/local all &&
-make prefix=/usr/local install &&
-cd ../ &&
-rm -rf git-$GITVERSION* &&
-unset GITVERSION
+yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+yum -y install git2u
 
 # PHP7.1のインストール
 yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
