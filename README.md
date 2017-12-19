@@ -18,9 +18,15 @@ $ vagrant plugin install vagrant-hostsupdater
 ## 環境構築
 
 ```
-$ mkdir -p ~/projects;
-$ git clone https://github.com/starlod/blog ~/projects/blog
-$ cd ~/projects/blog
+$ git clone https://github.com/starlod/blog
+$ cd blog
 $ cp Vagrantfile.example Vagrantfile
 $ vagrant up
+```
+
+## ビルトインサーバ起動
+
+```
+$ vagrant ssh -c "cd blog; php artisan serve --host 0.0.0.0"
+$ open http://blog.dev:8000
 ```
