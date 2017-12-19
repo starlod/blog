@@ -1,0 +1,13 @@
+// 作成、登録用ボタン
+
+$btn-create-color:              #fff;
+$btn-create-bg:                 #5cb85c;
+$btn-create-border:             darken($btn-create-bg, 5%);
+
+.btn-create {
+    background: $btn-create-bg;
+    color: $btn-create-color;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}

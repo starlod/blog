@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="post">
-            <div>{{ post.title }}</div>
+            <h1>{{ post.title }}</h1>
             <div>作成日: {{ post.created_at }}</div>
             <div>{{ post.body }}</div>
         </div>
@@ -16,7 +16,8 @@
         data() {
             return {
                 json: '',
-                post: {}
+                post: {},
+                tags: {}
             }
         },
         mounted() {
