@@ -12,6 +12,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        Category::truncate();
         Category::create(['name' => '未設定']);
         Category::create(['name' => '環境構築']);
         Category::create(['name' => 'サーバーサイド']);

@@ -7,6 +7,7 @@ $factory->define(App\Models\Comment::class, function (Faker $faker) {
         'post_id' => function() {
             return App\Models\Post::inRandomOrder()->first()->id;
         },
-        'body' => $faker->paragraph,
+        'author_name' => $faker->name,
+        'body' => $faker->text,
     ];
 });
