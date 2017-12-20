@@ -11,6 +11,7 @@ require('./utils/helpers');
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
+Vue.config.devtools = true
 Vue.prototype.$http = window.axios
 
 /**
