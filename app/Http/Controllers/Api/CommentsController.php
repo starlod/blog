@@ -8,6 +8,12 @@ use App\Models\Comment;
 
 class CommentsController extends Controller
 {
+    public function index(Post $post)
+    {
+        $comments = $post->comments()->oldest()->get();
+        return response()->json($comments);
+    }
+
     public function store(Request $request, Post $post)
     {
         $this->validate($request, [
