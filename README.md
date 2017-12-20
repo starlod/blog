@@ -28,5 +28,5 @@ $ vagrant up
 
 ```
 $ vagrant ssh -c "cd blog; php artisan serve --host 0.0.0.0"
-$ open http://blog.dev:8000
+$ open http://blog.local:8000
 ```
