@@ -7,6 +7,9 @@ $factory->define(App\Models\Post::class, function (Faker $faker) {
         'user_id' => function() {
             return App\Models\User::inRandomOrder()->first()->id;
         },
+        'category_id' => function() {
+            return App\Models\User::inRandomOrder()->first()->id;
+        },
         'title' => $faker->sentence,
         'body' => $faker->paragraph,
     ];
