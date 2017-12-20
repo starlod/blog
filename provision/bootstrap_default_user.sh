@@ -42,11 +42,13 @@ if [ ! -f ~/blog/.env ]; then
 fi
 
 if [ -d ~/blog ]; then
-    composer install
     cd ~/blog
+    composer install
+    yarn install
+    yarn run dev
+    php artisan key:generate
     php artisan migrate
     php artisan db:seed
-    # yarn install
 fi
 
 # バージョン確認

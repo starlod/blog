@@ -55,8 +55,12 @@ yum -y install git2u
 # PHP7.1のインストール
 yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 yum -y install --enablerepo=remi-php71 php
+## Laravel
 yum -y install --enablerepo=remi-php71 php-pdo php-tokenizer php-openssl php-mbstring php-xml
+## PHP-MySQL
 yum -y install --enablerepo=remi-php71 php-mysqlnd
+## Psysh
+yum -y install --enablerepo=remi-php71 php-readline
 mv /etc/php.ini /etc/php.ini.org
 cp /vagrant/provision/dev/etc/php.ini /etc/php.ini
 mkdir -p /var/log/php
