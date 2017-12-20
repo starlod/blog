@@ -22,6 +22,7 @@ $ git clone https://github.com/starlod/blog
 $ cd blog
 $ cp Vagrantfile.example Vagrantfile
 $ vagrant up
+$ vagrant ssh-config --host=blog-dev >> ~/.ssh/config
 ```
 
 ## ビルトインサーバ起動
