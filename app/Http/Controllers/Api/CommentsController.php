@@ -16,14 +16,9 @@ class CommentsController extends Controller
 
     public function store(Request $request, Post $post)
     {
-        $this->validate($request, [
-            'body' => 'required',
-        ]);
+        $post->comments()->create($request->all());
 
-        $comment = new Comment(['body' => $request->body]);
-        $post->comments()->save($comment);
-
-        return redirect()->route('posts.show', $post);
+        return response()->json($post);
     }
 
     public function destroy(Post $post, Comment $comment)

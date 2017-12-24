@@ -25,6 +25,7 @@ Vue.component('navbar', require('./components/NavBar.vue'));
 Vue.component('sticky-footer', require('./components/StickyFooter.vue'));
 Vue.component('pagination', require('./components/Pagination.vue'));
 Vue.component('comments', require('./components/Comments.vue'));
+Vue.component('comment-form', require('./components/CommentForm.vue'));
 Vue.component('autosize-textarea', require('./components/AutosizeTextarea.vue'));
 
 const router = new VueRouter({

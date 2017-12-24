@@ -17,7 +17,8 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('post_id')->comment('記事ID');
             $table->unsignedInteger('author_id')->nullable()->comment('コメント投稿者ID');
-            $table->text('author_name')->comment('コメント投稿者');
+            $table->text('author_name')->comment('コメント投稿者名');
+            $table->text('author_url')->nullable()->comment('コメント投稿者URL');
             $table->text('body')->comment('コメント内容');
             $table->timestamps();
 

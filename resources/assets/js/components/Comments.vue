@@ -10,6 +10,8 @@
             </div>
             <div class="comment-body">{{ comment.body }}</div>
         </div>
+
+        <comment-form></comment-form>
     </div>
 </template>
 
