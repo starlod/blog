@@ -1,0 +1,36 @@
+@mixin loading($mask: false, $font-size: 36px, $z-index: 1) {
+  position: relative;
+
+  @if $mask {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: $z-index;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    content: "\f110";
+    font-family: FontAwesome;
+    font-size: $font-size;
+    top: calc(50% - (#{$font-size} / 2));
+    left: calc(50% - (#{$font-size} / 2));
+    animation: fa-spin 2s infinite linear;
+    z-index: $z-index;
+  }
+}
+
+.loading {
+  @include loading;
+}
+
+.loading-mask {
+  @include loading($mask: true);
+}
