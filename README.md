@@ -29,5 +29,5 @@ $ vagrant ssh-config --host=blog-dev >> ~/.ssh/config
 
 ```
 $ vagrant ssh -c "cd blog; php artisan serve --host 0.0.0.0"
-$ open http://blog.local:8000
+$ open http://192.168.33.11:8000
 ```
